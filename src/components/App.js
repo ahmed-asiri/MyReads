@@ -1,16 +1,26 @@
-import logo from '../image/logo.png'
+import React from 'react';
+import ContentContainer from './ContentContainer';
+import ContentPadding from './ContentPadding';
 
-function App() {
-  return (
-    <div className="App">
-      <div className="header">
-        <div className="header__logo">
-          <img src={logo} alt=""/>
+import Header from './Header';
+import Navigation from './Navigation';
+
+class App extends React.Component {
+
+  render() {
+
+    return (
+      <div className="App">
+        <Header />
+        <div className="layout">
+          <Navigation />
+          <ContentContainer>
+            
+          </ContentContainer>
         </div>
-        <h1 className="header__title ui header">MyReads</h1>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,20 @@
+.layout {
+    display: flex;
+
+    &__nav {
+        width: 25%;
+        ul {
+
+            li {
+                list-style: none;
+                margin-top: 1.5rem;
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    &__content {
+        width: 75%;
+        
+    }
+}
