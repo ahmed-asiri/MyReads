@@ -1,7 +1,7 @@
 $color-text-grey: #333;
 $color-primary: #ff941d;
 $color-secondary: #ffde59;
-$color-bg: #efefef;
+$color-bg: #F2F5F7;
 $color-white: white;
 
 
@@ -80,7 +80,7 @@ body {
     font-family: 'Lato' sans-serif !important;
     box-sizing: border-box;
     color: $color-text-grey;
-    background-color: $color-bg;
+    background-color: $color-bg !important;
 
 }
 

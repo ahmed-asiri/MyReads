@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route } from 'react-router';
+import SearchPage from '../pages/SearchPage';
 import ContentContainer from './ContentContainer';
 import ContentPadding from './ContentPadding';
 import ControlledCarousel from './ControlledCarousel';
@@ -17,7 +19,7 @@ class App extends React.Component {
         <div className="layout">
           <Navigation />
           <ContentContainer>
-
+            <Route exact path="/search" component={SearchPage} />
           </ContentContainer>
         </div>
       </div>

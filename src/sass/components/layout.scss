@@ -1,20 +1,37 @@
 .layout {
     display: flex;
-
     &__nav {
-        width: 25%;
+        width: 15%;
         ul {
+            padding-top: 3rem;
 
             li {
                 list-style: none;
-                margin-top: 1.5rem;
                 font-size: 1.7rem;
+                
+                &:not(:first-child) {
+                    margin-top: 2.5rem;
+                }
+
+                a,
+                a:focus,
+                a:visited {
+                    color: $color-text-grey;
+                    text-decoration: none;
+                    width: 20rem;
+                    display: block;
+                    transition: all .2s;
+                }
+
+                a:hover {
+                }
             }
         }
     }
 
     &__content {
-        width: 75%;
-        
+        padding-top: 3rem;
+        width: 85%;
+        padding: 3rem 2rem;
     }
 }

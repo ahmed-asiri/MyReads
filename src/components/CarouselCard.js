@@ -12,7 +12,7 @@ function CarouselCard() {
                     <p className="carousel-card__details--author">by Author</p>
                     <p className="carousel-card__details--rating"> 3.5 out of 5 <span className="carousel-card__details--rating-voters"> 15,158 voters </span> </p>
                     <p className="carousel-card__details--description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eius repellendus fugit natus odio provident tenetur optio cupiditate, perferendis rerum.</p>
-                    <a href="#" className="carousel-card__details--btn"> More Details </a>
+                    <a href="/here" className="carousel-card__details--btn"> More Details </a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,20 @@
+.search-block {
+    display: flex;
+
+    &__search-input {
+        width: 25rem;
+        height: 3.5rem;
+        padding: 0 .4rem;
+        padding-left: 1.2rem;
+        font-size: 1.4rem;
+        border: 1px solid rgba($color-text-grey, .3);
+        border-radius: 20px;
+        transition: all .2s;
+        
+        &:focus {
+            border: 1px solid rgba(81, 203, 238, 1);
+            outline: none;
+        }
+
+    }
+}
