@@ -28,9 +28,10 @@ class App extends React.Component {
   }
 
   changeShelf = (changedBook, shelf) => {
-    
+    console.log(changedBook);
     update(changedBook, shelf).then(response => {
       // set shelf for new or updated book
+      console.log(response);
       changedBook.shelf = shelf;
       // update state with changed book
       this.setState(prevState => ({

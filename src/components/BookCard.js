@@ -22,6 +22,7 @@ function BookCard({ book, onShelfChange }) {
             title: 'None'
         }
     }
+
     const [currentShelf, setCurrentShelf] = useState(shelfTypes[book.shelf].title);
 
     const onShelfTypeChange = (shelf) => {
@@ -38,7 +39,7 @@ function BookCard({ book, onShelfChange }) {
                     </div>
                     <div className="book-card__details">
                         <h5 className="book-card__details--title">{book.title}</h5>
-                        <p className="book-card__details--author">by {book.authors[0]}</p>
+                        <p className="book-card__details--author">by { book.authors && book.authors[0]}</p>
                         <p className="book-card__details--rating">
                             { book.publishedDate && `${book.publishedDate}`}  
                         </p>
