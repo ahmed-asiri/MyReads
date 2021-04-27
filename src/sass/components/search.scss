@@ -1,6 +1,8 @@
 .search-block {
     display: flex;
-
+    @include respond(phone) {
+        display: block;
+    }
     &__search-input {
         width: 25rem;
         height: 3.5rem;
@@ -11,6 +13,12 @@
         border-radius: 20px;
         transition: all .2s;
         
+        @include respond(phone) {
+            width: 100%;
+            border-radius: 5px;
+            height: 3.8rem;
+        }
+
         &:focus {
             border: 1px solid rgba(81, 203, 238, 1);
             outline: none;

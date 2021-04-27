@@ -48,7 +48,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <ControlledCarousel />
+        <ControlledCarousel books={this.state.books.slice(0, 3)} />
         <div className="layout">
           <Navigation onShelfChange={this.onShelfChange} />
           <ContentContainer>

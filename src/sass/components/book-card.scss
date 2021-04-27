@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     width: 100%;
     margin-top: 3rem;
+
+    @include respond(tab-port) {
+        justify-content: center;
+    }
 }
 
 .book-card-container {
@@ -12,6 +16,27 @@
 
     &:not(:nth-child(3)) {
         margin-right: .8%;
+    }
+
+    @include respond(tab-land) {
+        width: 48.5%;
+    
+        &:not(:nth-child(2)) {
+            margin-right: .8%;
+        }
+    
+    }
+
+    @include respond(tab-port) {
+        width: 88%;
+        
+        &:not(:nth-child(2)) {
+            margin-right: 0;
+        }
+    }
+
+    @include respond(phone) {
+        width: 100%;
     }
 }
 
@@ -23,7 +48,7 @@
 
     &-content {
         display: flex;
-
+        
     }
 
     &__image {
@@ -39,6 +64,7 @@
     }
 
     &__details {
+        overflow: hidden;
 
         &--title {
             text-transform: capitalize;
@@ -80,9 +106,8 @@
         padding-top: 1rem;
     }
 
-    &__sub-details {
-        
-    }
+}
 
-
+.btn:not(:disabled):not(.disabled) {
+    font-size: 1.2rem;
 }

@@ -7,7 +7,7 @@ function BookCard({ book, onShelfChange }) {
     const shelfTypes = {
         'currentlyReading': {
             type: 'currentlyReading',
-            title: 'currently reading'
+            title: 'Currently Reading'
         },
         'wantToRead': {
             type: 'wantToRead',
@@ -15,11 +15,11 @@ function BookCard({ book, onShelfChange }) {
         },
         'read': {
             type: 'read',
-            title: 'read'
+            title: 'Read'
         },
         'none': {
             type: 'none',
-            title: 'none'
+            title: 'None'
         }
     }
     const [currentShelf, setCurrentShelf] = useState(shelfTypes[book.shelf].title);
