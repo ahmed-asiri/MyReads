@@ -13,6 +13,10 @@
                     margin-top: 2.5rem;
                 }
 
+                a {
+                    transition: all .2s;
+                }
+
                 a,
                 a:focus,
                 a:visited {
@@ -21,6 +25,12 @@
                     width: 20rem;
                     display: block;
                     transition: all .2s;
+                }
+
+                a:focus,
+                a:active {
+                    padding-left: 5px;
+                    border-left: 8px solid pink;
                 }
 
                 a:hover {
@@ -33,5 +43,6 @@
         padding-top: 3rem;
         width: 85%;
         padding: 3rem 2rem;
+        padding-left: 8rem;
     }
 }

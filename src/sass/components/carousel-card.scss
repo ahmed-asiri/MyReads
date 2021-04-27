@@ -24,6 +24,11 @@
         &--title {
             font-size: 3.5rem;
             text-transform: uppercase;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; 
+            -webkit-box-orient: vertical;
         }
 
         &--author {
@@ -38,6 +43,11 @@
 
         &--description {
             font-size: 1.6rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
         }
 
         &--btn,

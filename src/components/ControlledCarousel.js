@@ -12,7 +12,7 @@ function ControlledCarousel() {
   
     return (
         <div className="carousel-container">
-            <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel activeIndex={index} onSelect={handleSelect} >
                 <Carousel.Item>
                     <CarouselCard />
                 </Carousel.Item>

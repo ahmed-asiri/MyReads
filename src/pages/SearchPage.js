@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import BookCard from '../components/BookCard';
 
 export default class SearchPage extends Component {
 
@@ -12,7 +13,12 @@ export default class SearchPage extends Component {
 
     onSearchSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.query);
+    }
+
+    renderBooks = () => {
+        return this.props.books.map((book) => {
+            return <BookCard key={book.id} book={book} onShelfChange={this.props.onShelfChange} />
+        });
     }
 
     render() {
@@ -29,6 +35,10 @@ export default class SearchPage extends Component {
                             onChange={(e) => this.handleQueryChange(e.target.value)} 
                         />
                     </form>
+                </div>
+                <div className="books-container">
+                    {this.renderBooks()}
+
                 </div>
             </div>
         )
