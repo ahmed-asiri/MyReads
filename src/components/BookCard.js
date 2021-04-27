@@ -26,10 +26,12 @@ function BookCard({ book, onShelfChange }) {
     const [currentShelf, setCurrentShelf] = useState(shelfTypes[book.shelf].title);
 
     const onShelfTypeChange = (shelf) => {
+        // update the shlef locally
         setCurrentShelf(shelf.title)
+        // send changes to the App component
         onShelfChange(book, shelf.type)
     }
-
+    
     return (
         <div className="book-card-container">
             <div className="book-card">

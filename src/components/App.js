@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router';
-import { get, getAll, update } from '../api/BooksAPI';
+import { getAll, update } from '../api/BooksAPI';
 import BooksList from './BooksList';
 import SearchPage from '../pages/SearchPage';
 import ContentContainer from './ContentContainer';
@@ -24,22 +24,19 @@ class App extends React.Component {
   }
 
   onShelfChange = (shelf) => {
+    // which view to select
     this.setState({ shelfView: shelf });
   }
 
-  changeShelf = (changedBook, shelf) => {
-    console.log(changedBook);
-    update(changedBook, shelf).then(response => {
-      // set shelf for new or updated book
-      console.log(response);
-      changedBook.shelf = shelf;
-      // update state with changed book
+  changeShelf = (updatedBook, shelf) => {
+    update(updatedBook, shelf).then(response => {
+      // update the shelf for the book
+      updatedBook.shelf = shelf;
+      // update the books with the updated book
       this.setState(prevState => ({
         books: prevState.books
-          // remove updated book from array
-          .filter(book => book.id !== changedBook.id)
-          // add updated book to array
-          .concat(changedBook)
+          .filter(book => book.id !== updatedBook.id)
+          .concat(updatedBook)
       }));
     });
   };
