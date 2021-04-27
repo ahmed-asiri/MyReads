@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import { Carousel } from 'react-bootstrap';
+import CarouselCard from './CarouselCard';
 
 function ControlledCarousel() {
     const [index, setIndex] = useState(0);
@@ -13,18 +14,13 @@ function ControlledCarousel() {
         <div className="carousel-container">
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 <Carousel.Item>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <CarouselCard />
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <CarouselCard />
                 </Carousel.Item>
                 <Carousel.Item>
-                    <h3>Third slide label</h3>
-                    <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
+                    <CarouselCard />
                 </Carousel.Item>
             </Carousel>
         </div>

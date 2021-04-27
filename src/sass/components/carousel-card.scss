@@ -1,0 +1,64 @@
+.carousel-card-container {
+    background-color: #E9B3D1;
+    padding: 4rem 0;
+}
+
+.carousel-card {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: space-between;
+
+    &__image {
+        margin-right: 3rem;
+        height: 35rem;
+        background-color: red;
+        box-shadow: 0 1rem 1.5rem .5rem rgba(black, .3);
+        img {
+            height: 100%;
+        }
+    }
+
+    &__details {
+        color: #fefefe;
+        &--title {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+        }
+
+        &--author {
+            font-size: 1.6rem;
+            margin-top: -.8rem;
+        }
+
+        &--rating {
+            font-size: 1.4rem;
+            margin: 1.5rem 0;
+        }
+
+        &--description {
+            font-size: 1.6rem;
+        }
+
+        &--btn,
+        &--btn:link,
+        &--btn:focus {
+            width: 25rem;
+            text-align: center;
+            display: block;
+            background-color: $color-white;
+            padding: .8rem 1rem;
+            font-size: 1.9rem;
+            color: darken($color: #E9B3D1, $amount: 10);
+            border-radius: 10rem;
+            margin-top: 3.5rem;
+            text-decoration: none;
+            transition: all .2s;
+            @include boxshadow;
+
+            &:hover {
+                transform: translateY(-.4rem);
+            }
+        }
+    }
+}
