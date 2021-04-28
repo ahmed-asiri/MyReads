@@ -1,10 +1,21 @@
-# Getting Started with Create React App
+# MyReads shlefbooks React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project give the user the ability to categorize books on different shelfs to helping users organize reading. To build this project, I have build it from scratch using React with React Bootstrap to enhance the UI, also SCSS used to customize and add responsivness.
+
+For this project to be running as intended, I have used the BooksAPI by Udacity.
+
+
+## Required Commands
+
+To run the project with no problems or dependency errors, you should run in the project root:
+```bash
+    npm install
+```
+This command will install all the required dependencies to work
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project root, you can run:
 
 ### `npm start`
 
