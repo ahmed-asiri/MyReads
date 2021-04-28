@@ -77,27 +77,33 @@ function BookCard({ book, onShelfChange }) {
                                 {currentShelf}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
+                                <Dropdown.ItemText>Move to</Dropdown.ItemText>
+                                <Dropdown.Divider />
                                 <Dropdown.Item 
                                     name="currentlyReading" 
                                     onClick={(e) => onShelfTypeChange(shelfTypes[e.target.name])}
+                                    active={currentShelf === "Currently Reading"}
                                 >
                                     Currently Reading
                                 </Dropdown.Item>
                                 <Dropdown.Item 
                                     name="wantToRead" 
                                     onClick={(e) => onShelfTypeChange(shelfTypes[e.target.name])}
+                                    active={currentShelf === "Want to Read"}
                                 >
                                     Wnat to Read
                                 </Dropdown.Item>
                                 <Dropdown.Item 
                                     name="read" 
                                     onClick={(e) => onShelfTypeChange(shelfTypes[e.target.name])}
+                                    active={currentShelf === "Read"}
                                 >
                                     Read
                                 </Dropdown.Item>
                                 <Dropdown.Item 
                                     name="none" 
                                     onClick={(e) => onShelfTypeChange(shelfTypes[e.target.name])}
+                                    active={currentShelf === "None"}
                                 >
                                     None
                                 </Dropdown.Item>
