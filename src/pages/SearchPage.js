@@ -42,15 +42,39 @@ export default class SearchPage extends Component {
         }
     }
 
-    renderBooks = () => {
+    getDifferenceBetweenCurrentAndNewBooks = () => {
         // because the searched books will not have shelf,
         // we will join the already categorized books with new ones
         // to recognize category
         const oldBooks = !this.state.books.length ? [] : _.mapKeys(this.props.books, 'id');
         const newBooks = _.mapKeys(this.state.books, 'id');
 
-        const joinedBooksObject = {...newBooks, ...oldBooks }
+        // make Union between the two objects
+        let joinedBooksObject = {...newBooks, ...oldBooks }
+
+        // get the keys to iterate through them
+        const joinedBooksIds = _.keys(joinedBooksObject);
+
+
+        for(const bookId of joinedBooksIds) {
+            // remove books that was added by the Union process,
+            // that does not exist in the search query result
+            // in short, we can say it's Intersect process.
+            if(!_.has(newBooks, bookId)) {
+                // omit return new object
+                joinedBooksObject = _.omit(joinedBooksObject, bookId)
+            }
+        }
+
+        // convert to an array for rendering
         const joinedBooks = Object.values(joinedBooksObject);
+
+        return joinedBooks;
+    }
+
+    renderBooks = () => {
+        const joinedBooks = this.getDifferenceBetweenCurrentAndNewBooks();
+
         return joinedBooks.map((book) => {
             book.shelf = !book.shelf ? 'none' : book.shelf; 
             return <BookCard key={book.id} book={book} onShelfChange={this.props.onShelfChange} />
