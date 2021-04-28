@@ -18,7 +18,7 @@ export default class SearchPage extends Component {
 
         // to handle the controlled input component
         this.setState({ query: value }, () => {
-            
+
             const timeoutId = setTimeout(() => {
                 this.onSearchChange();
             }, 1000);
@@ -28,7 +28,6 @@ export default class SearchPage extends Component {
     }
 
     onSearchChange = () => {
-
         if(this.state.query) {
             // make search request
             search(this.state.query)
@@ -57,7 +56,7 @@ export default class SearchPage extends Component {
         return (
             <div className="search-page">
                 <div className="search-block">
-                    <form>
+                    <form onSubmit={e => e.preventDefault()}>
                         <input 
                             name="search"
                             className="search-block__search-input"

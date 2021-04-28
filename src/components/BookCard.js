@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Dropdown } from 'react-bootstrap'
 
+import logo from '../image/book-cover-placeholder.png';
+
 function BookCard({ book, onShelfChange }) {
 
 
@@ -31,13 +33,28 @@ function BookCard({ book, onShelfChange }) {
         // send changes to the App component
         onShelfChange(book, shelf.type)
     }
+
+    const handleThumbnail = () => {
+        let thumbnailUrl = '';
+        if(book.imageLinks) {
+            if(book.imageLinks.smallThumbnail)
+                thumbnailUrl = book.imageLinks.smallThumbnail
+            else if(book.imageLinks.thumbnail)
+                thumbnailUrl = book.imageLinks.thumbnail;
+        } else {
+            thumbnailUrl = logo;
+        }
+
+        return <img src={thumbnailUrl} alt="book cover"/>
+        
+    }
     
     return (
         <div className="book-card-container">
             <div className="book-card">
                 <div className="book-card-content">
                     <div className="book-card__image">
-                        <img src={book.imageLinks.smallThumbnail} alt=""/>
+                        {handleThumbnail()}
                     </div>
                     <div className="book-card__details">
                         <h5 className="book-card__details--title">{book.title}</h5>
