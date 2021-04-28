@@ -7,16 +7,27 @@ export default class SearchPage extends Component {
 
     state={
         query: '',
-        books: []
+        books: [],
+        timeoutId: 0
     }
 
     handleQueryChange = (value) => {
+
+        // using timeout to avoid overfetching by user typing
+        clearTimeout(this.state.timeoutId);
+
         // to handle the controlled input component
-        this.setState({ query: value });
+        this.setState({ query: value }, () => {
+            
+            const timeoutId = setTimeout(() => {
+                this.onSearchChange();
+            }, 1000);
+
+            this.setState({ timeoutId });
+        });
     }
 
-    onSearchSubmit = (e) => {
-        e.preventDefault();
+    onSearchChange = () => {
 
         if(this.state.query) {
             // make search request
@@ -46,7 +57,7 @@ export default class SearchPage extends Component {
         return (
             <div className="search-page">
                 <div className="search-block">
-                    <form onSubmit={this.onSearchSubmit}>
+                    <form>
                         <input 
                             name="search"
                             className="search-block__search-input"
