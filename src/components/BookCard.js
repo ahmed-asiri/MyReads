@@ -28,10 +28,13 @@ function BookCard({ book, onShelfChange }) {
     const [currentShelf, setCurrentShelf] = useState(shelfTypes[book.shelf].title);
 
     const onShelfTypeChange = (shelf) => {
-        // update the shlef locally
-        setCurrentShelf(shelf.title)
-        // send changes to the App component
-        onShelfChange(book, shelf.type)
+        // to skip, if the shelf is the same as before
+        if(shelf.title !== currentShelf) {
+            // update the shlef locally
+            setCurrentShelf(shelf.title)
+            // send changes to the App component
+            onShelfChange(book, shelf.type)
+        }
     }
 
     const handleThumbnail = () => {
@@ -91,7 +94,7 @@ function BookCard({ book, onShelfChange }) {
                                     onClick={(e) => onShelfTypeChange(shelfTypes[e.target.name])}
                                     active={currentShelf === "Want to Read"}
                                 >
-                                    Wnat to Read
+                                    Want to Read
                                 </Dropdown.Item>
                                 <Dropdown.Item 
                                     name="read" 
