@@ -32,7 +32,12 @@ export default class SearchPage extends Component {
             // make search request
             search(this.state.query)
                 .then(res => {
-                    res.length && this.setState({ books: [...res] })
+                    // handle the case of empty search result
+                    if(_.isArray(res)) {
+                        res.length && this.setState({ books: [...res] })
+                    } else {
+                        this.setState({ books: [] })
+                    }
                 })
         }
     }
